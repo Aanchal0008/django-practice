@@ -1,0 +1,28 @@
+{% extends "main.html" %}
+{% block AD %}
+    <h3><a href="/project">Project</a></h3> 
+    <h3><a href="/about">About</a></h3>
+    <h1>{{abcd}}</h1>
+    {% for i in names %}
+        {% if forloop.first %}
+            <h3>Name of students</h3>
+        {% endif %}
+        <h5>{{forloop.counter}} Hello {{i}}</h5>
+        {% if forloop.last %}
+            <h3>Name list ended</h3>
+            {{forloop.length}}
+        {% endif %}
+        <!-- <h5>{{forloop.counter0}} Hello {{i}}</h5> -->
+        <!-- <h5>{{forloop.revcounter}} Hello {{i}}</h5> -->
+        <!-- <h5>{{forloop.revcounter0}} Hello {{i}}</h5> -->
+    {% empty %}
+        <h5>Names not available</h5>
+    {% endfor %}
+    <h2>Reversed</h2>
+    {% for i in names reversed %}
+        <h5>Hello {{i}}</h5>
+    {% endfor %}
+
+    {% lorem 2 w random %}
+    <!-- <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi aut nobis rem rerum dignissimos corporis voluptatum? Voluptatum, inventore. Expedita possimus alias eligendi quis at soluta provident quidem fugiat. Similique, facilis.</p> -->
+{% endblock %}

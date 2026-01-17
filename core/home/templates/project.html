@@ -1,0 +1,33 @@
+{% extends "main.html" %}
+{% block AD %}
+    <h3><a href="/">Home</a></h3>
+    <h3><a href="/about">About</a></h3>
+    <h2>Details of Student</h2>
+    Name = {{dict.Name}} <br>
+    Roll No. = {{dict.Roll_No}} <br>
+    Percentage = {{dict.Percentage}}
+    <!-- {% if Percentage >= 50 %}
+        <h4>PASS</h4>
+    {% else %}
+        <h4>FAIL</h4>
+    {% endif %} -->
+    {% if Percentage >= 90 %}
+        <h4>Grade: A</h4>
+    {% elif Percentage >= 70 and 89.99 >= Percentage %}
+        <h4>Grade: B</h4>
+    {% elif Percentage >= 50 and 69.99 >= Percentage %}
+        <h4>Grade: C</h4>
+    {% elif Percentage >= 0 and 49.99 >= Percentage %}
+        <h4>Grade: D</h4>
+    {% endif %}
+    <br><br>
+    {% for i in names %}
+        {% for j in names %}
+            <span>{{j}}</span>
+            {% if forloop.last and forloop.parentloop.last %}
+                <h3>Nested loop end</h3>
+            {% endif %}
+        {% endfor %}
+        <br>
+    {% endfor %}
+{% endblock %}

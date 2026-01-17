@@ -1,0 +1,24 @@
+{% extends "main.html" %}
+{% block ad %}
+    <h2>User Details</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>S.NO.</th>
+                    <th>Email</th>
+                    <th>UserID</th>
+                    <th>Password</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for email, userid, pwd in table %}
+                    <tr>
+                        <td>{{ forloop.counter }}</td>
+                        <td>{{ email }}</td>
+                        <td>{{ userid }}</td>
+                        <td>{{ pwd }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+{% endblock %}
