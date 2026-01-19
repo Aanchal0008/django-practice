@@ -18,6 +18,7 @@ from django.contrib import admin
 from django.urls import path
 from home.views import *
 from accounts.views import *
+from students.views import *
 
 urlpatterns = [
     path("", home_view, name="home"),
@@ -26,4 +27,5 @@ urlpatterns = [
     path("about/", about, name="about"),
     path("accounts/", form_view, name="accounts"),
     path("table/", table_view, name="table"),
+    path("student/", student_home, name="student"),
 ]

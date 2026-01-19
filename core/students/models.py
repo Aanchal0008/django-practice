@@ -4,10 +4,6 @@ from django.db import models
 
 class Student(models.Model):
     roll = models.IntegerField()
-    name = models.CharField(max_length=80)
+    stud_name = models.CharField(max_length=100)
     per = models.FloatField()
-
-    def __str__(self):
-        return f"{self.roll} {self.name} {self.per}"
-    
-
+    photo = models.FileField(upload_to='images')
