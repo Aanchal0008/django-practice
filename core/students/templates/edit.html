@@ -1,0 +1,27 @@
+{% extends "main.html" %}
+    {% block AD %}
+    <div class="container card p-3 mt-2 shadow">  
+        <form  method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            <div class="mb-3">
+                <h2>Edit Record</h2>
+                <hr>
+                <label for="exampleInputPassword1" class="form-label">Roll Number</label>
+                <input type="text" class="form-control" id="exampleInputPassword1" name="roll" value="{{data.roll}}">
+            </div>
+            <div class="mb-3">
+                <label for="exampleInputPassword1" class="form-label">Name</label>
+                <input type="text" class="form-control" id="exampleInputPassword1" name="name" value="{{data.stud_name}}">
+            </div>
+            <div class="mb-3">
+                <label for="exampleInputPassword1" class="form-label">Percentage</label>
+                <input type="text" class="form-control" id="exampleInputPassword1" name="per" value="{{data.per}}">
+            </div>
+            <div class="mb-3">
+                <label for="exampleInputPassword1" class="form-label">Image</label>
+                <input type="file" class="form-control" id="exampleInputPassword1" name="photo">
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+    {% endblock %}
